@@ -11,10 +11,30 @@ public class WeatherAnalysis {
         //Step 3: Calculate the average
         //Step 4: Figure out which days are above average
         //Step 5: Print results
-        Scanner console= new Scanner(System.out);
-        weather(console);
+        Scanner console= new Scanner(System.in);
+        input(console);
     }
-    public static void weather(Scanner console){
-
+    public static void input(Scanner console){
+        System.out.print("How many days' temperatures? ");
+        int days=console.nextInt();
+        int[] temps=new int[days];
+        int sum=0;
+        for(int i=1;i<=days;i++) {
+            System.out.print("Day " + i + "'s high temp: ");
+            temps[days - 1] = console.nextInt();
+            sum+=temps[days-1];
+        }
+        average(temps, sum, days);
+    }
+    public static void average (int[] temps, int sum, int days){
+        double avtemp=Math.round((sum/(double)days)*10.0)/10.0;
+        System.out.println("Average temp = "+avtemp);
+        int above=0;
+        for(int i=0;i<days;i++){
+            if((double)temps[i]>avtemp)
+                above=above+1;
+        }
+        System.out.println(above+" days were above average.");
     }
 }
+
