@@ -21,8 +21,8 @@ public class WeatherAnalysis {
         int sum=0;
         for(int i=1;i<=days;i++) {
             System.out.print("Day " + i + "'s high temp: ");
-            temps[days - 1] = console.nextInt();
-            sum+=temps[days-1];
+            temps[i - 1] = console.nextInt();
+            sum+=temps[i-1];
         }
         average(temps, sum, days);
     }
@@ -31,8 +31,9 @@ public class WeatherAnalysis {
         System.out.println("Average temp = "+avtemp);
         int above=0;
         for(int i=0;i<days;i++){
-            if((double)temps[i]>avtemp)
-                above=above+1;
+            if((double)temps[i]>avtemp){
+                above++;
+            }
         }
         System.out.println(above+" days were above average.");
     }
