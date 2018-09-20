@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /*This program takes user input and calculates the average temperature for n days. The program also identifies how many days are
 above average*/
-public class WeatherAnalysis {
+public class ChristopherTroinaWeatherAnalysis {
     public static void main(String[] args){
         //Step 1: Take user input for number of days and temperatures
         //Step 2: Record number of days with an array and a cumulative sum variable
