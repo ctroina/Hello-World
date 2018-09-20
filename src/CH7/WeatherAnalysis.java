@@ -16,25 +16,33 @@ public class WeatherAnalysis {
     }
     public static void input(Scanner console){
         System.out.print("How many days' temperatures? ");
+        //User input for number of days
         int days=console.nextInt();
         int[] temps=new int[days];
+        //array for storing user input for temperature
         int sum=0;
         for(int i=1;i<=days;i++) {
+            //user input for temperature being stored in array, along with cumulative sum variable
             System.out.print("Day " + i + "'s high temp: ");
             temps[i - 1] = console.nextInt();
             sum+=temps[i-1];
         }
+        //calling average method
         average(temps, sum, days);
     }
     public static void average (int[] temps, int sum, int days){
+        //calculating the average
         double avtemp=Math.round((sum/(double)days)*10.0)/10.0;
+        //printing the average
         System.out.println("Average temp = "+avtemp);
+        //figuring out the days above the average
         int above=0;
         for(int i=0;i<days;i++){
             if((double)temps[i]>avtemp){
                 above++;
             }
         }
+        //printing amount of days above the average
         System.out.println(above+" days were above average.");
     }
 }
