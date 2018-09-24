@@ -1,10 +1,11 @@
 package CH7;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*This program takes user input and calculates the average temperature for n days. The program also identifies how many days are
 above average*/
-public class ChristopherTroinaWeatherAnalysis {
+public class ChristopherTroinaWeatherAnalysis2 {
     public static void main(String[] args){
         //Step 1: Take user input for number of days and temperatures
         //Step 2: Record number of days with an array and a cumulative sum variable
@@ -44,6 +45,15 @@ public class ChristopherTroinaWeatherAnalysis {
         }
         //printing amount of days above the average
         System.out.println(above+" days were above average.");
+        System.out.println("\nTemperatures: "+Arrays.toString(temps));
+        hotCold(temps, days);
+    }
+    public static void hotCold(int[] temps, int days){
+        int coldest1=Integer.MAX_VALUE;
+        for(int i=0;i<days;i++){
+            if(Math.min(coldest1,temps[i])==temps[i])
+                coldest1=temps[i]
+        }
     }
 }
 
