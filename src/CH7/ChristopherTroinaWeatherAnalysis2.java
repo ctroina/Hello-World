@@ -50,7 +50,8 @@ public class ChristopherTroinaWeatherAnalysis2 {
     }
     public static void hotCold(int[] temps, int days){
         Arrays.sort(temps);
-        System.out.println("Two coldest days: ");
+        System.out.println("Two coldest days: "+temps[0]+", "+temps[1]);
+        System.out.println("Two hottest days: "+temps[days-1]+", "+temps[days-2]);
     }
 }
 
