@@ -50,9 +50,13 @@ public class ChristopherTroinaWeatherAnalysis2 {
     }
     public static void hotCold(int[] temps, int days){
         int coldest1=Integer.MAX_VALUE;
+        for(int i=0;i<days;i++) {
+            if (Math.min(coldest1, temps[i]) == temps[i])
+                coldest1 = temps[i];
+        }
+        int coldest2=Integer.MAX_VALUE;
         for(int i=0;i<days;i++){
-            if(Math.min(coldest1,temps[i])==temps[i])
-                coldest1=temps[i];
+
         }
     }
 }

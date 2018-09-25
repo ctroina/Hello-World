@@ -1,6 +1,7 @@
 package CH7;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class ArrayPractice {
     public static void main(String []args){
@@ -23,5 +24,28 @@ public class ArrayPractice {
         //after populating the array
         int[] numbers2={1,2,3,4,5};
         System.out.println(Arrays.toString(numbers2));
+        randomArray();
+    }
+    public static void randomArray(){
+        int length=(int)(Math.random()*10)+1;
+        int[] nums=new int[length];
+        for(int i=0;i<length;i++)
+            nums[i]=(int)(Math.random()*10)+1;
+        System.out.println("Random Array: "+Arrays.toString(nums));
+        Scanner console=new Scanner(System.in);
+        randomArray(console);
+    }
+    public static void randomArray(Scanner console){
+        System.out.print("How many numbers? ");
+        int length=console.nextInt();
+        System.out.print("Max value ");
+        int max=console.nextInt();
+        System.out.print("Min value ");
+        int min=console.nextInt();
+        int range=(max-min)+1;
+        int[] nums=new int[length];
+        for(int i=0;i<length;i++)
+            nums[i]=(int)(Math.random()*range)+min;
+        System.out.println("Random Array: "+Arrays.toString(nums));
     }
 }
