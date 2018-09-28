@@ -21,7 +21,7 @@ public class ChristopherTroinaWeatherAnalysis2 {
         int days=console.nextInt();
         //Catches number lower than 2
         while(days<=1){
-            System.out.print("Bad number, put in a value higher than 1. ");
+            System.out.print("Bad number, put in a value higher than 1 ");
             days=console.nextInt();
         }
         int[] temps=new int[days];
