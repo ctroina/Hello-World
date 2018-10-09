@@ -48,7 +48,7 @@ public class ChristopherTroinaRandomHatV2 {
         teams[1]=num;
         nums[num]=0;
         //prints first two teams
-        System.out.println(teams[0]+" & "+teams[1]);
+        System.out.println("Team "+teams[0]+" & Team "+teams[1]);
         //repeats for the rest of the teams
         for(int i=2;i<n;i+=2){
             for(int ii=0;ii<=1;ii++) {
@@ -58,7 +58,7 @@ public class ChristopherTroinaRandomHatV2 {
                 teams[i+ii] = num;
                 nums[num] = 0;
             }
-            System.out.println(teams[i]+" & "+teams[i+1]);
+            System.out.println("Team "+teams[i]+" & Team "+teams[i+1]);
         }
     }
 }
