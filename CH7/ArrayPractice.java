@@ -25,6 +25,7 @@ public class ArrayPractice {
         int[] numbers2={1,2,3,4,5};
         System.out.println(Arrays.toString(numbers2));
         randomArray();
+        System.out.println(mode(669260267));
     }
     public static void randomArray(){
         int length=(int)(Math.random()*10)+1;
@@ -47,5 +48,8 @@ public class ArrayPractice {
         for(int i=0;i<length;i++)
             nums[i]=(int)(Math.random()*range)+min;
         System.out.println("Random Array: "+Arrays.toString(nums));
+    }
+    public static int mode(int n){
+        int[] counter=new int[10];
     }
 }
