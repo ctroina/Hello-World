@@ -27,7 +27,10 @@ public class ArrayPractice {
         randomArray();*/
         System.out.println("Most frequent: "+modeV1(669260267));
         System.out.println("Most frequent: "+modeV2(669260267));
-    }
+        String[] names={"name","again","gain","no","Name3"};
+        namesBackwards(names);
+
+}
 
     public static void randomArray() {
         int length = (int) (Math.random() * 10) + 1;
@@ -126,6 +129,16 @@ public class ArrayPractice {
         }
         return maxin;
     }
+    public static void namesBackwards(String[] names){
+        String[] a=Arrays.copyOf(names, names.length);
+        for(int i=0;i<a.length/2;i++){
+            String temp=a[i];
+            a[i]=a[a.length-i-1];
+            a[a.length-i-1]=temp;
+        }
+        System.out.println(Arrays.toString(a));
+    }
+
 }
 
 
