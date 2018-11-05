@@ -20,7 +20,7 @@ public class ChristopherTroinaRandomHatV2 {
         }
         numGen(n);
     }
-    
+
 
     public static void numGen(int n) {
         int[] nums=new int[n+1];
