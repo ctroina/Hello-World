@@ -1,9 +1,10 @@
 package CH7;
 
 import java.io.File;
+import java.io.PrintStream;
 import java.util.Scanner;
 
-public class ChristopherTroinaPersonalityTest {
+public class ChristopherTroinaPersonality {
     public static void main(String[] args){
         Scanner console=new Scanner(System.in);
         System.out.print("Input file name: ");
@@ -14,5 +15,8 @@ public class ChristopherTroinaPersonalityTest {
             filename=console.next();
             file=new File(filename);
         }
+        System.out.print("Output file name: ");
+        String outfile=console.next();
+        PrintStream stream=new PrintStream(outfile);
     }
 }
