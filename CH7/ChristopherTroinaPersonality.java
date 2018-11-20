@@ -39,19 +39,77 @@ public class ChristopherTroinaPersonality {
                 String line=input.nextLine();
                 Scanner linescan= new Scanner(line);
                 while(linescan.hasNext())
-                    stream.print(linescan.next());
+                    stream.print(linescan.next()+" ");
                 stream.println();
             }
             else{
-                count=0;
+                int stcount=0;
                 int[][] asbs=new int[4][2];
-                String answers=input.next();
+                String answers=input.nextLine();
                 for(int i=1;i<=10;i++){
-                    for(int ii=7;ii<=10;ii++){
-                        
+                    for(int ii=1;ii<=7;ii++){
+                        if(answers.charAt(stcount)=='a'||answers.charAt(stcount)=='A')
+                            asbs[ii/2][0]++;
+                        else if(answers.charAt(stcount)=='b'||answers.charAt(stcount)=='B')
+                            asbs[ii/2][1]++;
+                        stcount++;
                     }
                 }
+                filePrint(asbs, stream);
             }
+            count++;
         }
     }
+    public static void filePrint(int[][] asbs, PrintStream stream){
+        for(int i=0;i<4;i++)
+            stream.print(asbs[i][0]+"A-"+asbs[i][1]+"B ");
+        stream.println();
+        int[] percents=percent(asbs);
+        stream.print("[");
+        for(int i=0;i<4;i++)
+            stream.print(percents[i]+"%, ");
+        stream.print("] = ");
+        String category=findCategory(percents);
+        stream.println(category);
+        stream.println();
+    }
+    public static int[] percent(int[][]asbs){
+        int[] percents=new int[4];
+        for(int i=0;i<4;i++) {
+            if (i == 0)
+                percents[i] = asbs[i][1] / 10 * 100;
+            else
+                percents[i] = asbs[i][1] / 20 * 100;
+        }
+        return percents;
+    }
+    public static String findCategory(int[] percents){
+        String category="";
+        if(percents[0]<50)
+            category+="E";
+        else if(percents[0]>50)
+            category+="I";
+        else
+            category+="X";
+        if(percents[1]<50)
+            category+="S";
+        else if(percents[1]>50)
+            category+="N";
+        else
+            category+="X";
+        if(percents[2]<50)
+            category+="T";
+        else if(percents[2]>50)
+            category+="F";
+        else
+            category+="X";
+        if(percents[3]<50)
+            category+="J";
+        else if(percents[3]>50)
+            category+="P";
+        else
+            category+="X";
+        return category;
+    }
 }
+

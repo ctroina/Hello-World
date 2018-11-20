@@ -59,4 +59,3 @@ public class ChristopherTroinaWeatherAnalysis2 {
         System.out.println("Two hottest days: "+temps[days-1]+", "+temps[days-2]);
     }
 }
-
