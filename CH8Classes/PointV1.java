@@ -4,10 +4,20 @@ public class PointV1 {
     public int x;
     public int y;
     //behaviors below (methods)
-    public void translate(int x, int y){
-
+    public void translate(int dx, int dy){
+        x+=dx;
+        y+=dy;
     }
-    public void setLocation(int x, int y){
-
+    public void setLocation(int newx, int newy){
+        x=newx;
+        y=newy;
+    }
+    public double distance(PointV1 p2){
+        double dx=x-p2.x;
+        double dy=y-p2.y;
+        return Math.sqrt(Math.pow(dx,2)+Math.pow(dy,2));
+    }
+    public double distanceFromOrigin(){
+        return Math.sqrt(Math.pow((double)x,2)+Math.pow((double)y,2));
     }
 }
