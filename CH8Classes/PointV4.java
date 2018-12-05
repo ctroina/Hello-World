@@ -5,9 +5,9 @@ public class PointV4 {
     private int y;
     //behaviors below (methods)
     //A constructor doesn't have a return type, and it gets called implicitly when an object is created.
-    public PointV4(int x1, int y1){
-        x=x1;
-        y=y1;
+    public PointV4(int x, int y){
+        this.x=x;
+        this.y=y;
     }
     public PointV4(){
         x=0;
