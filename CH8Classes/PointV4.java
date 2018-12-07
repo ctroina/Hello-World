@@ -1,6 +1,8 @@
 package CH8Classes;
 //This class is a template to represent a point on a coordinate plane
 public class PointV4 {
+    //static fields and methods reside at the class level, not the at the object level
+    private static int objectCount;
     private int x;
     private int y;
     //behaviors below (methods)
@@ -8,10 +10,12 @@ public class PointV4 {
     public PointV4(int x, int y){
         this.x=x;
         this.y=y;
+        objectCount++;
     }
     public PointV4(){
         x=0;
         y=0;
+        objectCount++;
     }
     public int getX(){
         return x;
@@ -40,6 +44,9 @@ public class PointV4 {
     }
     public double distanceFromOrigin(){
         return Math.sqrt(Math.pow((double)x,2)+Math.pow((double)y,2));
+    }
+    public static int getObjectCount(){
+        return objectCount;
     }
     //overriding the built in toString method to print the contents of the object
     public String toString() {
