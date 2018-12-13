@@ -2,7 +2,7 @@ package CH8Classes;
 //this program is a very real bank account
 public class BankAccountV1 {
     private double balance;
-    private int pin;
+    private String pin;
     private String name;
     private String ssn;
     private String address;
@@ -13,7 +13,7 @@ public class BankAccountV1 {
         this.ssn=ssn;
         this.address=address;
     }
-    public BankAccountV1(int[] dob, String name, String ssn, String address, int pin, double addBalance){
+    public BankAccountV1(int[] dob, String name, String ssn, String address, String pin, double addBalance){
         this.dob=dob;
         this.name=name;
         this.ssn=ssn;
@@ -45,5 +45,7 @@ public class BankAccountV1 {
         balance+=cash;
         System.out.println("Deposited $"+cash+".");
     }
-
+    public String toString(){
+        return "Name: "+name+"\n"+"Balance: "+balance;
+    }
 }
