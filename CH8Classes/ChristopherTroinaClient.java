@@ -59,7 +59,20 @@ public class ChristopherTroinaClient {
     }
 
     public static void tree() {
-
+        System.out.println("\nTree:");
+        ChristopherTroinaTree tree=new ChristopherTroinaTree(50, 10, 190, "Oak");
+        System.out.println(tree);
+        tree.grow(-5,-9,-2);
+        tree.grow(5,9,2);
+        tree.notAlive();
+        System.out.println(tree.getHeight());
+        System.out.println(tree.getWidth());
+        System.out.println(tree.getAge());
+        System.out.println(tree.getSpecies());
+        System.out.println(tree.isAlive());
+        tree.chopDown(100);
+        tree.chopDown(35);
+        System.out.println(tree);
     }
 
     public static void dog() {
