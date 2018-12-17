@@ -76,10 +76,56 @@ public class ChristopherTroinaClient {
     }
 
     public static void dog() {
-
+        System.out.println("\nDog:");
+        ChristopherTroinaDog dog=new ChristopherTroinaDog(5, 10, 20, 7, "bulldog");
+        System.out.println(dog);
+        dog.setWalking(true);
+        System.out.println(dog);
+        dog.setWalking(false);
+        dog.setSleeping(true);
+        System.out.println(dog);
+        dog.setWalking(true);
+        System.out.println(dog);
+        System.out.println("Height: "+dog.getHeight());
+        System.out.println("Length: "+dog.getLength());
+        System.out.println("Weight: "+dog.getWeight());
+        System.out.println("Age: "+dog.getAge());
+        System.out.println("Breed: "+dog.getBreed());
+        System.out.println("Walking: "+dog.isWalking());
+        System.out.println("Sleeping: "+dog.isSleeping());
     }
 
     public static void eMail() {
-
+        System.out.println("\ne-Mail:");
+        ChristopherTroinaEMail eMail=new ChristopherTroinaEMail("Christopher", "Troina",
+                "Ctroina@student.mamkschools.org", "password", 6, 3, 2002,
+                'm', "America");
+        ChristopherTroinaEMail eMail2=new ChristopherTroinaEMail("Christopher", "Troina",
+                "Ctroina@student.mamkschools.org", "password", 6, 3, 2002,
+                'm', "America", "999-999-9999");
+        ChristopherTroinaEMail eMail3=new ChristopherTroinaEMail("Christopher", "Troina",
+                "Ctroina@student.mamkschools.org", "Ctroina2@mamkschools.org",
+                "password", 6, 3, 2002, 'm', "America");
+        ChristopherTroinaEMail eMail4=new ChristopherTroinaEMail("Christopher", "Troina",
+                "Ctroina@student.mamkschools.org", "password", 6, 3, 2002,
+                'm', "America", "999-999-9999",
+                "Ctroina2@student.mamkschools.org");
+        System.out.println(eMail4);
+        eMail4.setFirstName("Yes");
+        eMail4.setLastName("No");
+        eMail4.setDob(4, 5, 1888);
+        eMail4.setGender('o');
+        eMail4.setPhoneNumber("333-333-3333");
+        eMail4.setCurrentEMail("Yes@gmail.com");
+        eMail4.setPassword("password1");
+        System.out.println(eMail4.getFirstName());
+        System.out.println(eMail4.getLastName());
+        System.out.println(eMail4.geteMailAddress());
+        System.out.println(eMail4.getCurrentEMail());
+        System.out.println(Arrays.toString(eMail4.getDob()));
+        System.out.println(eMail4.getCountryOfResidence());
+        System.out.println(eMail4.getGender());
+        System.out.println(eMail4.getPhoneNumber());
+        System.out.println(eMail4.getInbox());
     }
 }
