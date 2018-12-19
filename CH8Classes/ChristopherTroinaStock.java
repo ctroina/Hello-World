@@ -9,7 +9,7 @@ public class ChristopherTroinaStock {
     }
     public void buy(int shares, double value){
         this.shares+=shares;
-        totalCost+=value;
+        totalCost=shares*value;
     }
     public double profit(double currVal){
         return shares*currVal;
