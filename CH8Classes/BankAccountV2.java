@@ -5,15 +5,15 @@ public class BankAccountV2 {
     private String pin;
     private String name;
     private String ssn;
-    private String address;
-    private int[] dob;
-    public BankAccountV2(int[] dob, String name, String ssn, String address){
+    private Address address;
+    private DateOfBirth dob;
+    public BankAccountV2(DateOfBirth dob, String name, String ssn, Address address){
         this.dob=dob;
         this.name=name;
         this.ssn=ssn;
         this.address=address;
     }
-    public BankAccountV2(int[] dob, String name, String ssn, String address, String pin, double addBalance){
+    public BankAccountV2(DateOfBirth dob, String name, String ssn, Address address, String pin, double addBalance){
         this.dob=dob;
         this.name=name;
         this.ssn=ssn;
@@ -24,13 +24,13 @@ public class BankAccountV2 {
     public double checkBalance(){
         return balance;
     }
-    public int[] getDob(){
+    public DateOfBirth getDob(){
         return dob;
     }
     public String getName(){
         return name;
     }
-    public String getAddress(){
+    public Address getAddress(){
         return address;
     }
     public void withdraw(double amount){
