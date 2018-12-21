@@ -1,25 +1,25 @@
 package CH8Classes;
-
+//this program simulates grocery items which will be part of a grocery list
 public class ChristopherTroinaGroceryItemOrder {
+    //state fields
     private String name;
     private int quantity;
-    private double pricePerUnit;
-    public ChristopherTroinaGroceryItemOrder(String name, int quantity, double pricePerUnit) {
+    private double ppu;
+    //constructor
+    public ChristopherTroinaGroceryItemOrder(String name, int quantity, double ppu) {
         this.name = name;
         this.quantity = quantity;
-        this.pricePerUnit = pricePerUnit;
+        this.ppu = Math.round(ppu*100.0)/100.0;
     }
+    //behaviors
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public double getPrice() {
-        return pricePerUnit;
+    //gets the total cost of the item
+    public double getCost() {
+        return Math.round((ppu*quantity)*100.0)/100.0;
     }
     public String toString(){
-        return name+": Quantity: "+quantity+" Price Per Unit: "+pricePerUnit;
+        return "$"+ppu+"\t"+quantity+"\t"+name+"/t$"+getCost()+"\n";
     }
 }
