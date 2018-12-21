@@ -2,7 +2,7 @@ package CH8Classes;
 //This bank is only for 'Merica
 public class Address {
     private int houseNumber;
-    private int aptNum;
+    private String aptNum="";
     private String street;
     private String city;
     private String state;
@@ -18,7 +18,7 @@ public class Address {
         this.country = "United States";
     }
 
-    public Address(int houseNumber, int aptNum, String street, String city, String state, int zip, String country) {
+    public Address(int houseNumber, String aptNum, String street, String city, String state, int zip, String country) {
         this.houseNumber = houseNumber;
         this.aptNum = aptNum;
         this.street = street;
@@ -36,11 +36,11 @@ public class Address {
         this.houseNumber = houseNumber;
     }
 
-    public int getAptNum() {
+    public String getAptNum() {
         return aptNum;
     }
 
-    public void setAptNum(int aptNum) {
+    public void setAptNum(String aptNum) {
         this.aptNum = aptNum;
     }
 
@@ -84,6 +84,9 @@ public class Address {
         this.country = "United States";
     }
     public String toString(){
-        return houseNumber+" "+street+", "+city+", "+state+", "+country+", "+zip;
+        if(aptNum.equals(""))
+            return houseNumber+" "+street+", "+city+", "+state+", "+country+" "+zip;
+        else
+            return houseNumber+" "+street+", Apt. "+aptNum+", "+city+", "+state+", "+country+" "+zip;
     }
 }
