@@ -1,7 +1,8 @@
 package CH8Classes;
 
 /**
- * ChristopherTroinaDVD, represents a DVD or Blu-Ray disk in a movie collection.
+ * ChristopherTroinaDVD, represents a DVD or Blu-Ray disk in a movie collection, whith the title, director, cost, and
+ * year of release.
  * @author Christopher Troina
  */
 public class ChristopherTroinaDVD {
@@ -26,7 +27,13 @@ public class ChristopherTroinaDVD {
         this.cost = Math.round(cost*100.0)/100.0;
         this.blueray = blueray;
     }
+
+    /**
+     * Returns all the state fields as a string.
+     * @return the String containing the state field.
+     */
     public String toString(){
+        /**Contains the String to be returned*/
         String string="$"+cost+"\n"+year+"\n"+title+"\n"+director;
         if(blueray)
             string+="\nBlu-Ray\n";
