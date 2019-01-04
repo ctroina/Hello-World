@@ -50,44 +50,44 @@ public class ChristopherTroinaDVDCollection {
      * @return The string containing the collection.
      */
     public String toString(){
-        /**The average cost of the entire collection*/
+        //The average cost of the entire collection
         String averageCost="$"+Math.round((totalCost/(double)count)*100.0)/100.0;
-        /**The decimal point and beyond of the average cost, used to check if a zero needs to be added*/
+        //The decimal point and beyond of the average cost, used to check if a zero needs to be added
         String centsAv=averageCost.substring(averageCost.indexOf('.'));
         //adds a zero to the end of the average cost if it ends in zero.
         if(centsAv.length()==2)
             averageCost+="0";
-        /**Formats the total cost into a String to check if a zero is needed to be added, and for use in the table*/
+        //Formats the total cost into a String to check if a zero is needed to be added, and for use in the table
         String totalST="$"+totalCost;
-        /**The decimal point and beyond of the total cost, used to check if a zero needs to be added*/
+        //The decimal point and beyond of the total cost, used to check if a zero needs to be added
         String centsT=totalST.substring(totalST.indexOf('.'));
         //adds a zero to the end of the price if it ends in zero.
         if(centsT.length()==2)
             totalST+="0";
-        /**The String to store the display of the collection, with the table storing the DVDs.*/
+        //The String to store the display of the collection, with the table storing the DVDs.
         String string="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nMy DVD Collection\n\nNumber of DVDs: "+count+
                 "\nTotal cost: "+totalST+"\nAverage cost: " +averageCost+"\n\nDVD List:\n\n";
-        /**The array used to create the table*/
+        //The array used to create the table
         final Object[][] table = new String[count][];
         //stores the values of each film in the table array.
         for(int i=0;i<count;i++) {
-            /**Stores the result of the toString for the current film*/
+            //Stores the result of the toString for the current film
             String dvd=collection[i].toString();
-            /**Scanner used to extract the values from the dvd string*/
+            /*Scanner used to extract the values from the dvd string*/
             Scanner scan=new Scanner(dvd);
-            /**The cost of the current DVD*/
+            //The cost of the current DVD*/
             String cost=scan.nextLine();
-            /**The year of release of the current DVD.*/
+            //The year of release of the current DVD.*/
             String year=scan.nextLine();
-            /**The title of the current DVD.*/
+            //The title of the current DVD.*/
             String title=scan.nextLine();
-            /**The director of the current DVD.*/
+            //The director of the current DVD.*/
             String director=scan.nextLine();
-            /**If the current film is a DVD or Blu-Ray disk.*/
+            //If the current film is a DVD or Blu-Ray disk.*/
             boolean bluray=false;
             if(scan.hasNextLine())
                 bluray=true;
-            /**The decimal point and beyond of the cost, used to check if a zero needs to be added*/
+            //The decimal point and beyond of the cost, used to check if a zero needs to be added
             String cents=cost.substring(cost.indexOf('.'));
             //adds a zero to the end of the cost if it ends in zero.
             if(cents.length()==2)

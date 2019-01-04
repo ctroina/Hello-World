@@ -33,7 +33,7 @@ public class ChristopherTroinaDVD {
      * @return the String containing the state field.
      */
     public String toString(){
-        /**Contains the String to be returned*/
+        /*Contains the String to be returned*/
         String string="$"+cost+"\n"+year+"\n"+title+"\n"+director;
         if(blueray)
             string+="\nBlu-Ray\n";

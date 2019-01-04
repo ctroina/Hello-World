@@ -9,7 +9,6 @@ public class ChristopherTroinaMovies {
      * Creates a ChristopherTroinaDVDCollection object and adds ChristopherTroinaDVD objects to it, and then prints it.
      */
     public static void main(String[] args){
-        /**The collection of movies*/
         ChristopherTroinaDVDCollection collection=new ChristopherTroinaDVDCollection();
         collection.addDVD("The Godfather","Francis Ford Coppala", 1972,24.95, true);
         collection.addDVD("District 9","Neil Blomkamp", 2009,19.95, false);

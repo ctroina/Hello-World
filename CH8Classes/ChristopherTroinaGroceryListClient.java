@@ -9,8 +9,6 @@ public class ChristopherTroinaGroceryListClient {
      * Creates a new ChristopherTroinaGroceryList object, adds ten items to it, and prints it.
      */
     public static void main(String[] args){
-        /**The ChristopherTroinaGroceryList object used to test the ChristopherTroinaGroceryList and
-         *ChristopherTroinaGroceryItem classes*/
         ChristopherTroinaGroceryList list=new ChristopherTroinaGroceryList();
         list.addItem(new ChristopherTroinaGroceryItem("Napkins", 2, 5));
         list.addItem(new ChristopherTroinaGroceryItem("Ham", 10, 15));
