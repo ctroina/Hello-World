@@ -13,11 +13,12 @@ import java.util.Scanner;
 public class ChristopherTroinaRandomNumbersArrayList {
 
     /**
-     *The main method, calls the print method to start program; and creates the ArrayList variable.
+     * The main method, calls the print method to start program; and creates the ArrayList variable.
      * @throws FileNotFoundException, if file "randomNumbers.txt" is not found.
      */
     public static void main(String[] args) throws FileNotFoundException {
-        ArrayList<Integer> nums=new ArrayList<Integer>();
+        //the list to be used in the rest of the program
+        ArrayList<Integer> nums=new ArrayList<>();
         print(nums);
     }
 
@@ -28,7 +29,9 @@ public class ChristopherTroinaRandomNumbersArrayList {
      * @throws FileNotFoundException, if the file "randomNumbers.txt" is not found.
      */
     public static void print(ArrayList<Integer> nums) throws FileNotFoundException {
+        //fills the list with data from "randomNumbers.txt".
         fill(nums);
+        //prints out calculated data
         System.out.println(nums);
         System.out.println("Average: "+average(nums));
         int[] minmax=minMax(nums);
@@ -43,8 +46,10 @@ public class ChristopherTroinaRandomNumbersArrayList {
      * @throws FileNotFoundException, if the file "randomNumbers.txt" is not found.
      */
     public static void fill(ArrayList<Integer> nums) throws FileNotFoundException {
+        //creates a File and a Scanner to scan the File
         File file=new File("randomNumbers.txt");
         Scanner scan=new Scanner(file);
+        //adds the numbers from the file to the list
         while(scan.hasNextInt()){
             nums.add(scan.nextInt());
         }
@@ -56,9 +61,12 @@ public class ChristopherTroinaRandomNumbersArrayList {
      * @return the average of all the values.
      */
     public static double average(ArrayList<Integer> nums){
+        //the sum of all numbers in the list
         int sum=0;
+        //adds all numbers from the list to the sum variable
         for(int i=0;i<nums.size();i++)
             sum+=nums.get(i);
+        //returns the average of all the numbers.
         return (double)sum/(double)nums.size();
     }
 
@@ -68,14 +76,18 @@ public class ChristopherTroinaRandomNumbersArrayList {
      * @return An int array containing the minimum value at index 0, and the maximum value at index 1.
      */
     public static int[] minMax(ArrayList<Integer> nums){
+        //the largest number
         int max=nums.get(0);
+        //the smallest number
         int min=nums.get(0);
+        //goes through the entire list to find the largest and smallest numbers
         for(int i=1;i<nums.size();i++){
             if(Math.max(nums.get(i),max)==nums.get(i))
                 max=nums.get(i);
             if(Math.min(nums.get(i), min)==nums.get(i))
                 min=nums.get(i);
         }
+        //creates and returns an array to store the largest and smallest numbers
         int[] minmax={min, max};
         return minmax;
     }
@@ -86,8 +98,11 @@ public class ChristopherTroinaRandomNumbersArrayList {
      * @return the new list containing only the odd numbers from the nums ArrayList.
      */
     public static ArrayList<Integer> removeEvens(ArrayList<Integer> nums) {
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        //creates the new list that will contain no even numbers
+        ArrayList<Integer> list = new ArrayList<>();
+        //finds all the odd numbers in the nums list and adds them to the new list
         for(int i=0;i<nums.size();i++){
+            //checks if number at index i in the nums list is odd
             if(nums.get(i)%2!=0)
                 list.add(nums.get(i));
         }
