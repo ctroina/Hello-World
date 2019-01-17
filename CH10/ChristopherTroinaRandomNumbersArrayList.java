@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * ChristopherTroinaRandomNumbersArrayList, Takes number data from a text file and displays them all in a list, as well as the average, smallest and largest
- * values, and the list with only odd numbers.
+ * ChristopherTroinaRandomNumbersArrayList, Takes number data from a text file and displays them all in a list, as well
+ * as the average, smallest and largest values, and the list with only odd numbers.
  * @author Christopher Troina
  */
 public class ChristopherTroinaRandomNumbersArrayList {
