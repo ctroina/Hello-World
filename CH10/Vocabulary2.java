@@ -6,26 +6,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class Vocabulary1 {
+public class Vocabulary2 {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner scan1=new Scanner(new File("moby.txt"));
-        Scanner scan2=new Scanner(new File("lear.txt"));
+        Scanner scan1=new Scanner(new File("text1.txt"));
+        Scanner scan2=new Scanner(new File("text2.txt"));
         ArrayList<String> list1=getWords(scan1);
-        //System.out.println(list1);
+        System.out.println(list1);
         ArrayList<String> list2=getWords(scan2);
-        //System.out.println(list2);
+        System.out.println(list2);
         ArrayList<String> overlap=overlap(list1, list2);
-        //System.out.println(overlap);
-        //System.out.println();
-        System.out.println("Text1 words = "+list1.size());
-        System.out.println("Text2 words = "+list2.size());
-        double overlap1=(double)overlap.size()/(double)list1.size()*100.0;
-        double overlap2=(double)overlap.size()/(double)list2.size()*100.0;
-        System.out.println("percentage of  text 1 in overlap= "+overlap1);
-        System.out.println("percentage of  text 2 in overlap= "+overlap2);
+        System.out.println(overlap);
     }
-     public static ArrayList<String> getWords(Scanner scan){
-        scan.useDelimiter("[^a-zA-z']+");
+    public static ArrayList<String> getWords(Scanner scan){
+        scan.useDelimiter("[^a-zA-Z']+");
         ArrayList<String> words=new ArrayList<>();
         while(scan.hasNext())
             words.add(scan.next().toLowerCase());
