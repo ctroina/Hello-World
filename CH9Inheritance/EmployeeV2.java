@@ -2,7 +2,7 @@ package CH9Inheritance;
 
 
 //This is a class
-public class EmployeeV1 {
+public class EmployeeV2 {
     //this is not a class
     public int getHours(){
         return 40;

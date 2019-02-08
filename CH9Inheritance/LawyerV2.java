@@ -5,7 +5,7 @@ public class LawyerV2 extends EmployeeV1{
 
     //override methods from EmployeeV1 class
     public int getVacationDays(){
-        return 15;
+        return super.getVacationDays()+5;
     }
     public String getLeaveSlip(){
         return "pink";
